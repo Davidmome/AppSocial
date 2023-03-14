@@ -1,0 +1,20 @@
+{
+  "name": "Websocial",
+  "version": "1.0.0",
+  "description": "Redes sociales",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "dependencies": {
+    "date-fns": "^2.29.3",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.13",
+    "nodemon": "^2.0.9"
+  },
+  "engines": {
+    "node": "16.18.1"
+  }
+}
