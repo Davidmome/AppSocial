@@ -24,8 +24,9 @@ Puedes utilizar esta como el backend de una redsocial
 
 ## Demostracion
 
-![imagen del prueba](./img/Video1.gif)
-![imagen del prueba](./img/Video2.gif)
+![imagen del prueba](./img/img/insomnia.PNG)
+![imagen del prueba](./img/img/Video1.gif)
+![imagen del prueba](./img/img/Video2.gif)
 
 ## Colaboradores
 
