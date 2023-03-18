@@ -8,7 +8,6 @@ module.exports = {
   },
   getSingleUser(request, response) {
     User.findOne({ _id: request.params.userId })
-      //que es?
       .select("-__v")
       .then((user) =>
         !user
@@ -32,8 +31,7 @@ module.exports = {
           ? response
               .status(404)
               .json({ message: "No se encontro usuario con este id" })
-          : //{ _id: { $in: data.thoughts}
-            Thought.deleteMany({ _id: { $in: user.thoughts } })
+          : Thought.deleteMany({ _id: { $in: user.thoughts } })
       )
       .then(() => response.json({ message: "Usuario y pensamientos borrados" }))
       .catch((error) => response.status(500).json(error));
@@ -59,7 +57,6 @@ module.exports = {
   addFriend(request, response) {
     User.findOneAndUpdate(
       { _id: request.params.userId },
-      // {$addToSet: {_id: request.params.userId}},
       { $addToSet: { friends: request.params.friendId } },
       { runValidators: true, new: true }
     )
@@ -76,7 +73,6 @@ module.exports = {
   deleteFriend(request, response) {
     User.findOneAndUpdate(
       { _id: request.params.userId },
-      //$in: [request.params.friendId]
       { $pull: { friends: { $in: [request.params.friendId] } } },
       { runValidators: true, new: true }
     )

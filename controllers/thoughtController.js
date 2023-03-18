@@ -7,7 +7,6 @@ module.exports = {
       .catch((error) => response.status(500).json(error));
   },
 
-  //checar
   getSingleThought(request, response) {
     Thought.findOne({ _id: request.params.id })
       .then((thought) =>
@@ -47,7 +46,6 @@ module.exports = {
     Thought.findOneAndUpdate(
       { _id: request.params.thoughtId },
       { $set: request.body },
-      //preguntar
       { runValidators: true, new: true }
     )
       .then((thought) =>
@@ -87,10 +85,8 @@ module.exports = {
   },
 
   addReaction(request, response) {
-    console.log("sjdngf");
     Thought.findOneAndUpdate(
       { _id: request.params.thoughtId },
-      //reactionbody?
       { $addToSet: { reactions: request.body } },
       { runValidators: true, new: true }
     )
