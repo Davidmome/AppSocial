@@ -9,7 +9,7 @@ module.exports = {
 
   //checar
   getSingleThought(request, response) {
-    Thought.findOne({ _id: request.params.thoughtId })
+    Thought.findOne({ _id: request.params.id })
       .then((thought) =>
         !thought
           ? response
@@ -87,6 +87,7 @@ module.exports = {
   },
 
   addReaction(request, response) {
+    console.log("sjdngf");
     Thought.findOneAndUpdate(
       { _id: request.params.thoughtId },
       //reactionbody?
